@@ -1,8 +1,11 @@
+
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    background-image: url('background_image.jpg'); /* Замените 'background_image.jpg' на путь к вашему изображению фона */
+    background-size: cover;
+    background-position: center;
 }
 
 header {
@@ -12,64 +15,41 @@ header {
     text-align: center;
 }
 
-nav ul {
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.container h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.container p {
+    color: #666;
+    margin-bottom: 5px;
+}
+
+ul {
     list-style: none;
     padding: 0;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-main {
-    padding: 20px;
-}
-
-.dashboard, .users {
-    background-color: #fff;
-    margin-bottom: 20px;
-    padding: 20px;
-}
-
-.dashboard h2, .users h2 {
-    color: #333;
-}
-
-.stats {
-    display: flex;
-    justify-content: space-between;
-}
-
-.stat {
-    background-color: #f0f0f0;
-    padding: 10px;
-    border-radius: 5px;
-    flex-basis: 30%;
-    text-align: center;
-}
-
-.users .user-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    grid-gap: 20px;
-}
-
-.user {
-    background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
+ul li {
+    margin-bottom: 5px;
 }
 
 footer {
     background-color: #333;
     color: #fff;
+    padding: 20px;
     text-align: center;
-    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
