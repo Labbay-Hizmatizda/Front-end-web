@@ -12,7 +12,6 @@
         <nav>
           <ul>
             <li><a href="#" class="logo">
-              <img src="./pic/logo.jpg">
               <span class="nav-item">Admin</span>
             </a></li>
             <li><a href="#">
@@ -23,9 +22,10 @@
               <i class="fas fa-comment"></i>
               <span class="nav-item">Message</span>
             </a></li>
-            <li><a href="#">
+            <li><a href="order.html">
+
               <i class="fas fa-database"></i>
-              <span class="nav-item">Report</span>
+              <span class="nav-item">Order</span>
             </a></li>
             <li><a href="#">
               <i class="fas fa-chart-bar"></i>
@@ -46,7 +46,7 @@
     
         <section class="main">
           <div class="main-top">
-            <h1>Attendance</h1>
+            <h1>Admin-Panel</h1>
             <i class="fas fa-user-cog"></i>
           </div>
           <div class="users">
@@ -122,78 +122,36 @@
     
           <section class="attendance">
             <div class="attendance-list">
-              <h1>Attendance List</h1>
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Depart</th>
-                    <th>Date</th>
-                    <th>Join Time</th>
-                    <th>Logout Time</th>
-                    <th>Details</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>01</td>
-                    <td>Sam David</td>
-                    <td>Design</td>
-                    <td>03-24-22</td>
-                    <td>8:00AM</td>
-                    <td>3:00PM</td>
-                    <td><button>View</button></td>
-                  </tr>
-                  <tr class="active">
-                    <td>02</td>
-                    <td>Balbina Kherr</td>
-                    <td>Coding</td>
-                    <td>03-24-22</td>
-                    <td>9:00AM</td>
-                    <td>4:00PM</td>
-                    <td><button>View</button></td>
-                  </tr>
-                  <tr>
-                    <td>03</td>
-                    <td>Badan John</td>
-                    <td>testing</td>
-                    <td>03-24-22</td>
-                    <td>8:00AM</td>
-                    <td>3:00PM</td>
-                    <td><button>View</button></td>
-                  </tr>
-                  <tr>
-                    <td>04</td>
-                    <td>Sara David</td>
-                    <td>Design</td>
-                    <td>03-24-22</td>
-                    <td>8:00AM</td>
-                    <td>3:00PM</td>
-                    <td><button>View</button></td>
-                  </tr>
-                  <!-- <tr >
-                    <td>05</td>
-                    <td>Salina</td>
-                    <td>Coding</td>
-                    <td>03-24-22</td>
-                    <td>9:00AM</td>
-                    <td>4:00PM</td>
-                    <td><button>View</button></td>
-                  </tr>
-                  <tr >
-                    <td>06</td>
-                    <td>Tara Smith</td>
-                    <td>Testing</td>
-                    <td>03-24-22</td>
-                    <td>9:00AM</td>
-                    <td>4:00PM</td>
-                    <td><button>View</button></td>
-                  </tr> -->
-                </tbody>
-              </table>
+                <h1>Attendance List</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Depart</th>
+                            <th>Date</th>
+                            <th>Join Time</th>
+                            <th>Logout Time</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for employee in employees reversed %} 
+                        <tr>
+                            <td>{{ employee.id }}</td>
+                            <td>{{ employee.name }} {{ employee.surname }}</td>
+                            <td>{{ employee.depart }}</td>
+                            <td>{{ employee.date }}</td>
+                            <td>{{ employee.join_time }}</td>
+                            <td>{{ employee.logout_time }}</td>
+                            <td><button>View</button></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
-          </section>
+        </section>
+        
         </section>
       </div>
     
