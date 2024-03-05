@@ -42,19 +42,17 @@
             </a></li>
           </ul>
         </nav>
-        <!-- wrapper -->
-        <div class="wrap">
-          <div class="card">
-            <img src="" alt="" width="%">
-            <h3>///zakaz///</h3>
-            <p>opisaniye zakaza</p>
-            <!-- Bu yerga yana bitta element qoyishimiza mumkin zakaz qilingan yoki qilinmagamligini tekshirish uchyn -->
-            <a href="order_detail.html" class="button">Details</a>
-          </div>
+            <div class="wrap">
+        <h1>Order Detail</h1>
+        <div class="order-detail">
+            <p><strong>Category:</strong> {{ order.category }}</p>
+            <p><strong>Description:</strong> {{ order.description }}</p>
+            <p><strong>Price:</strong> {{ order.price }}</p>
         </div>
-        
-      </div>
+    </div>
+    </div>
+
     
-    </body>
-    </html>
-    </span>
+</body>
+</html>
+</span>
