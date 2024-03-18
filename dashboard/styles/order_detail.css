@@ -57,6 +57,7 @@ a {
   color: rgb(85, 83, 83);
   display: table;
   padding: 10px;
+  font-size: 15px;
 }
 
 nav .fas {
