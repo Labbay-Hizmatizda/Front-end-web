@@ -1,6 +1,8 @@
 // import React from "react";
-import { useState } from "react";
+// import { useState } from "react";
 import styles from "./MainSidebar.module.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { changeNavigationState } from "../../store/slices/navSlice";
 
 export const MainSidebar = () => {
   const list = [
@@ -20,7 +22,8 @@ export const MainSidebar = () => {
     { id: 14, title: "Employee Passports", link: "employee-passports" },
   ];
 
-  const [activeItem, setActiveItem] = useState("Dashboard");
+  const activeItem = useSelector((state) => state.navigation.navigationState);
+  const dispatch = useDispatch();
 
   return (
     <aside className={styles.sidebar}>
@@ -34,7 +37,7 @@ export const MainSidebar = () => {
               activeItem === item.title && styles.activeItem
             }`}
             key={item.id}
-            onClick={() => setActiveItem(item.title)}
+            onClick={() => dispatch(changeNavigationState(item.title))}
           >
             <a href={item.link} className={styles.listItemLink}>
               {item.title}

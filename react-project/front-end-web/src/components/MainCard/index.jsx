@@ -1,5 +1,6 @@
-// import React from "react";
 import "MainCard.scss";
+// import React from "react";
+
 export const MainCard = () => {
   return (
     <div className="card">
