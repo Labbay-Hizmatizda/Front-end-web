@@ -1,5 +1,4 @@
-// import React from "react";
-// import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import styles from "./MainSidebar.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { changeNavigationState } from "../../store/slices/navSlice";
@@ -24,24 +23,23 @@ export const MainSidebar = () => {
 
   const activeItem = useSelector((state) => state.navigation.navigationState);
   const dispatch = useDispatch();
-
   return (
     <aside className={styles.sidebar}>
-      <a href="#">
+      <Link to="/" onClick={() => dispatch(changeNavigationState("Dashboard"))}>
         <h2 className={styles.logo}>Logo</h2>
-      </a>
+      </Link>
       <ul className={styles.list}>
         {list.map((item) => (
           <li
+            key={item.id}
             className={`${styles.listItem} ${
               activeItem === item.title && styles.activeItem
             }`}
-            key={item.id}
             onClick={() => dispatch(changeNavigationState(item.title))}
           >
-            <a href={item.link} className={styles.listItemLink}>
+            <NavLink to={item.link} className={styles.listItemLink}>
               {item.title}
-            </a>
+            </NavLink>
           </li>
         ))}
       </ul>

@@ -21,6 +21,7 @@ function App() {
       <MainSidebar />
       <Routes>
         <Route path="/" element={<Dashboard />} />
+        <Route path="dashboard" element={<Dashboard />} />
         <Route path="cvs" element={<CVs />} />
         <Route path="employee" element={<Employee />} />
         <Route path="employee-passports" element={<EmployeePassports />} />
