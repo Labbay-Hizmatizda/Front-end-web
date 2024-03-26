@@ -1,9 +1,14 @@
 // import React from "react";
+import styles from "./Dashboard.module.scss";
 
 export const Dashboard = () => {
   return (
-    <div>
-      <h1>Dashboard</h1>
-    </div>
+    <section className={styles.section}>
+      <h1 className={styles.title}>Dashboard</h1>
+      <div className={styles.table}>
+        <div className={styles.tableHeaders}></div>
+        <div className={styles.tableItem}></div>
+      </div>
+    </section>
   );
 };

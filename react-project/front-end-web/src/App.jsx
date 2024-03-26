@@ -2,7 +2,7 @@ import { MainSidebar } from "./components/MainSidebar";
 import { Route, Routes } from "react-router-dom";
 import { Dashboard } from "./pages/Dashboard";
 import { CVs } from "./pages/CVs";
-import { Employee } from "./pages/Employee";
+import { Employees } from "./pages/Employees";
 import { EmployeeReview } from "./pages/EmployeeReview";
 import { EmployeePassports } from "./pages/EmployeePassports";
 import { Employer } from "./pages/Employer";
@@ -23,7 +23,7 @@ function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="dashboard" element={<Dashboard />} />
         <Route path="cvs" element={<CVs />} />
-        <Route path="employee" element={<Employee />} />
+        <Route path="employee" element={<Employees />} />
         <Route path="employee-passports" element={<EmployeePassports />} />
         <Route path="employee-review" element={<EmployeeReview />} />
         <Route path="employer" element={<Employer />} />

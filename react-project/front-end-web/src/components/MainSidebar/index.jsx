@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { changeNavigationState } from "../../store/slices/navSlice";
 
 export const MainSidebar = () => {
-  fetch('http://127.0.0.1:8000/api/employers') .then(response => response.json()) .then(json => console.log(json))
   const list = [
     { id: 1, title: "Dashboard", link: "/" },
     { id: 2, title: "Employee", link: "employee" },
