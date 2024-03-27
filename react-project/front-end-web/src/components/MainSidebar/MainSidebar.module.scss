@@ -20,6 +20,8 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 10px 0;
 }
 
 .listItem {
@@ -48,4 +50,8 @@
 
 .activeItem a {
   color: #013cc6;
+}
+
+.list:last-child {
+  border-bottom: none;
 }

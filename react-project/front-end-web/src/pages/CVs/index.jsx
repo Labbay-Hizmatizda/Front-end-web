@@ -1,9 +1,8 @@
-// import React from "react";
-import styles from "./CVs.module.scss";
+import React from "react";
 
 export const CVs = () => {
   return (
-    <div className={styles.wrapper}>
+    <div>
       <h1>CVs</h1>
     </div>
   );
