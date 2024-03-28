@@ -30,7 +30,7 @@ export const Employers = () => {
           <TableHeaders list={table_headers} />
         </div>
         {data.map((row) => (
-          <div className={styles.row}>
+          <div className={styles.row} key={row.id}>
             <TableRow data={row} key={row.id} />
           </div>
         ))}
