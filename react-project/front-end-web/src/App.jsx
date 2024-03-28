@@ -18,24 +18,28 @@ import { Proposals } from "./pages/Proposals";
 function App() {
   return (
     <div className="App">
-      <MainSidebar />
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="dashboard" element={<Dashboard />} />
-        <Route path="cvs" element={<CVs />} />
-        <Route path="employees" element={<Employees />} />
-        <Route path="employee-passports" element={<EmployeePassports />} />
-        <Route path="employee-reviews" element={<EmployeeReviews />} />
-        <Route path="employers" element={<Employers />} />
-        <Route path="employer-reviews" element={<EmployerReviews />} />
-        <Route path="jobs" element={<Jobs />} />
-        <Route path="job-appeals" element={<JobAppeals />} />
-        <Route path="orders" element={<Orders />} />
-        <Route path="employee-cards" element={<EmployeeCards />} />
-        <Route path="payments" element={<Payments />} />
-        <Route path="payment-appeals" element={<PaymentAppeals />} />
-        <Route path="proposals" element={<Proposals />} />
-      </Routes>
+      <div className="sidebar">
+        <MainSidebar />
+      </div>
+      <div className="pages">
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="cvs" element={<CVs />} />
+          <Route path="employees" element={<Employees />} />
+          <Route path="employee-passports" element={<EmployeePassports />} />
+          <Route path="employee-reviews" element={<EmployeeReviews />} />
+          <Route path="employers" element={<Employers />} />
+          <Route path="employer-reviews" element={<EmployerReviews />} />
+          <Route path="jobs" element={<Jobs />} />
+          <Route path="job-appeals" element={<JobAppeals />} />
+          <Route path="orders" element={<Orders />} />
+          <Route path="employee-cards" element={<EmployeeCards />} />
+          <Route path="payments" element={<Payments />} />
+          <Route path="payment-appeals" element={<PaymentAppeals />} />
+          <Route path="proposals" element={<Proposals />} />
+        </Routes>
+      </div>
     </div>
   );
 }
