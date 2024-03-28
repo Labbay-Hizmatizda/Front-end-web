@@ -12,8 +12,8 @@ export const Table = ({ title, table_headers, data }) => {
           <TableHeaders list={table_headers} />
         </div>
         {data.map((row) => (
-          <div className={styles.row}>
-            <TableRow data={row} key={row.id} />
+          <div className={styles.row} key={row.id}>
+            <TableRow data={row} />
           </div>
         ))}
       </div>

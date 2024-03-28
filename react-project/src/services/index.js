@@ -40,7 +40,7 @@ export default class AppService {
   }
 
   getEmployerReviews() {
-    return this.getResource("/employer-reviews/");
+    return this.getResource("/employer_reviews/");
   }
 
   getOrders() {
@@ -56,7 +56,7 @@ export default class AppService {
   }
 
   getEmployeeReviews() {
-    return this.getResource("/employee-reviews");
+    return this.getResource("/employee_reviews");
   }
 
   getJobs() {
@@ -72,6 +72,10 @@ export default class AppService {
   }
 
   getPaymentAppeals() {
-    return this.getResource("/payment-appeals");
+    return this.getResource("/payment_appeals");
+  }
+
+  getEmployeePassports() {
+    return this.getResource("/employee_passports");
   }
 }
