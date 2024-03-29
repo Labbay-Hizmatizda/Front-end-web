@@ -3,7 +3,7 @@ import AppService from "../../services";
 import { Table } from "../../components/Table";
 
 export const EmployeeCards = () => {
-  const table_headers = ["id", "holder name", "number", "owner"];
+  const table_headers = ["id", "owner id", "card holder", "holder name"];
   const api = new AppService();
   const [data, setData] = useState([]);
   useEffect(() => {

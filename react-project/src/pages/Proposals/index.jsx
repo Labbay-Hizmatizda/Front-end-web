@@ -3,7 +3,7 @@ import AppService from "../../services";
 import { Table } from "../../components/Table";
 
 export const Proposals = () => {
-  const table_headers = ["id", "message", "price", "owner", "order"];
+  const table_headers = ["id", "owner id", "price", "order id"];
   const [data, setData] = useState([]);
   const api = new AppService();
 

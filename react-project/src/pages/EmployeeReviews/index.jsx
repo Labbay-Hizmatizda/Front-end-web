@@ -3,7 +3,14 @@ import AppService from "../../services";
 import { Table } from "../../components/Table";
 
 export const EmployeeReviews = () => {
-  const table_headers = ["id", "rate", "message", "job", "owner", "employer"];
+  const table_headers = [
+    "id",
+    "owner id",
+    "rate",
+    "message",
+    "job id",
+    "employer id",
+  ];
   const api = new AppService();
   const [data, setData] = useState([]);
   useEffect(() => {

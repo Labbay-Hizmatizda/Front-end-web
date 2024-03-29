@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Table } from "../../components/Table";
 
 export const PaymentAppeals = () => {
-  const table_headers = ["id", "message", "owner", "payment"];
+  const table_headers = ["id", "owner id", "message", "payment id"];
   const [data, setData] = useState([]);
   const api = new AppService();
 

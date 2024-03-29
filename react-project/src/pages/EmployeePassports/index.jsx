@@ -3,14 +3,7 @@ import AppService from "../../services";
 import { Table } from "../../components/Table";
 
 export const EmployeePassports = () => {
-  const table_headers = [
-    "id",
-    "image",
-    "personal number",
-    "card number",
-    "is approved",
-    "owner",
-  ];
+  const table_headers = ["id", "owner id", "image", "is approved"];
   const api = new AppService();
   const [data, setData] = useState([]);
   useEffect(() => {

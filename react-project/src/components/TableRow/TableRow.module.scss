@@ -18,3 +18,19 @@
   height: 15px;
   cursor: pointer;
 }
+
+.greenText {
+  color: #06c506;
+}
+
+.redText {
+  color: #f51818;
+}
+
+.longText {
+  cursor: pointer;
+}
+
+.longText:hover {
+  color: #2e2c2c;
+}
