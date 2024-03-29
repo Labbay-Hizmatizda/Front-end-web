@@ -12,15 +12,16 @@
 }
 
 .modal {
-  width: 500px;
-  height: 600px;
-  padding: 8px;
+  width: auto;
+  height: auto;
+  max-width: 750px;
+  border: 5px solid #fff;
   background-color: #fff;
   border-radius: 15px;
 }
 
 .img {
-  width: 100%;
-  height: 100%;
-  border-radius: 15px;
+  width: auto;
+  max-height: 73vh;
+  border-radius: 10px;
 }
