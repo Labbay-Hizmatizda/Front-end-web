@@ -82,4 +82,8 @@ export default class AppService {
   getCVs() {
     return this.getResource("/cvs");
   }
+
+  getFilteredData(page, key, filter) {
+    return this.getResource(`/${page}/?${key}=${filter}`);
+  }
 }

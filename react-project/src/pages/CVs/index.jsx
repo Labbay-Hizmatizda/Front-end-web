@@ -12,7 +12,12 @@ export const CVs = () => {
 
   return (
     <>
-      <Table data={data} table_headers={table_headers} title={"CVs"} />
+      <Table
+        data={data}
+        table_headers={table_headers}
+        title={"CVs"}
+        page={"cvs"}
+      />
     </>
   );
 };

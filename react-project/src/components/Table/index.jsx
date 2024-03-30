@@ -4,7 +4,7 @@ import { TableRow } from "../TableRow";
 import { TableFilters } from "../TableFilters";
 import styles from "./Table.module.scss";
 
-export const Table = ({ title, table_headers, data }) => {
+export const Table = ({ title, table_headers, data, setData, url }) => {
   const [keys, setKeys] = useState([]);
   useEffect(() => {
     if (data.length) {
@@ -19,7 +19,7 @@ export const Table = ({ title, table_headers, data }) => {
         <div className={styles.headers}>
           <TableHeaders list={table_headers} />
         </div>
-        <TableFilters keys={keys} />
+        <TableFilters keys={keys} setData={setData} url={url} />
         {data.map((row) => (
           <div className={styles.row} key={row.id}>
             <TableRow data={row} />
