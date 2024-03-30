@@ -78,4 +78,8 @@ export default class AppService {
   getEmployeePassports() {
     return this.getResource("/employee_passports");
   }
+
+  getCVs() {
+    return this.getResource("/cvs");
+  }
 }

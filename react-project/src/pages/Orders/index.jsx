@@ -1,6 +1,27 @@
-// import React from "react";
+import React, { useEffect, useState } from "react";
+import AppService from "../../services";
+import { Table } from "../../components/Table";
 
 export const Orders = () => {
-  const table_headers = ["id", "category", "description", "media"];
-  return <div>Order</div>;
+  const table_headers = [
+    "id",
+    "owner id",
+    "description",
+    "media",
+    "location",
+    "location_link",
+    "price",
+    "category",
+  ];
+  const api = new AppService();
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    api.getOrders().then((data) => setData(data));
+  }, []);
+
+  return (
+    <>
+      <Table data={data} table_headers={table_headers} title={"Orders"} />
+    </>
+  );
 };

@@ -16,6 +16,7 @@ export const EmployeeReviews = () => {
   useEffect(() => {
     api.getEmployeeReviews().then((data) => setData(data));
   }, []);
+
   return (
     <Table
       data={data}

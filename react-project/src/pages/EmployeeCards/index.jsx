@@ -9,7 +9,14 @@ export const EmployeeCards = () => {
   useEffect(() => {
     api.getEmployeeCards().then((data) => setData(data));
   }, []);
+
   return (
-    <Table data={data} table_headers={table_headers} title={"Employee Cards"} />
+    <>
+      <Table
+        data={data}
+        table_headers={table_headers}
+        title={"Employee Cards"}
+      />
+    </>
   );
 };

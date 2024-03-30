@@ -19,6 +19,7 @@ export const EmployerReviews = () => {
       setData(data);
     });
   }, []);
+
   return (
     <Table
       data={data}

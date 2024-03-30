@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import AppService from "../../services";
-import styles from "./Employers.module.scss";
-import { TableHeaders } from "../../components/TableHeaders";
-import { TableRow } from "../../components/TableRow";
+import { Table } from "../../components/Table";
 
 export const Employers = () => {
   const table_headers = [
@@ -23,18 +21,6 @@ export const Employers = () => {
   }, []);
 
   return (
-    <section className={styles.section}>
-      <div className={styles.wrapper}>
-        <h1 className={styles.title}>Employers</h1>
-        <div className={styles.headers}>
-          <TableHeaders list={table_headers} />
-        </div>
-        {data.map((row) => (
-          <div className={styles.row} key={row.id}>
-            <TableRow data={row} key={row.id} />
-          </div>
-        ))}
-      </div>
-    </section>
+    <Table data={data} table_headers={table_headers} title={"Employers"} />
   );
 };
