@@ -5,10 +5,10 @@ import { Table } from "../../components/Table";
 export const EmployeeReviews = () => {
   const table_headers = [
     "id",
-    "owner id",
     "rate",
     "message",
     "job id",
+    "owner id",
     "employer id",
   ];
   const api = new AppService();

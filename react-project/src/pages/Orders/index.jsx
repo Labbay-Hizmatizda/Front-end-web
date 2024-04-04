@@ -5,12 +5,13 @@ import { Table } from "../../components/Table";
 export const Orders = () => {
   const table_headers = [
     "id",
-    "owner id",
     "description",
     "media",
     "location",
     "location_link",
     "price",
+    "is active",
+    "owner id",
     "category",
   ];
   const api = new AppService();

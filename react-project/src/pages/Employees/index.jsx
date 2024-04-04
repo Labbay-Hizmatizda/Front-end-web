@@ -22,12 +22,6 @@ export const Employees = () => {
   }, []);
 
   return (
-    <Table
-      data={data}
-      table_headers={table_headers}
-      title={"Employees"}
-      setData={setData}
-      url={"employees"}
-    />
+    <Table data={data} table_headers={table_headers} title={"Employees"} />
   );
 };

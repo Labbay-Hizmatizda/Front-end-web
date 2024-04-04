@@ -56,3 +56,15 @@
 .list:last-child {
   border-bottom: none;
 }
+
+.langBtns {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-left: 30px;
+  margin-top: 40px;
+}
+
+.langBtn {
+  color: #7a7a7a;
+}

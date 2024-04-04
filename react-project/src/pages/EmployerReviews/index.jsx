@@ -5,10 +5,10 @@ import { Table } from "../../components/Table";
 export const EmployerReviews = () => {
   const table_headers = [
     "id",
-    "owner id",
     "rate",
     "message",
     "job id",
+    "owner id",
     "employee id",
   ];
   const [data, setData] = useState([]);
