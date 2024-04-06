@@ -11,7 +11,7 @@
 }
 
 .modal {
-  width: 600px;
+  width: 500px;
   height: 700px;
   background-color: #fff;
   border-radius: 15px;
@@ -22,4 +22,28 @@
   font-weight: bold;
   font-size: 23px;
   color: #013cc6;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 25px;
+}
+
+.input {
+  width: 400px;
+  padding: 8px 10px;
+  border: 1px solid #c2c2c2;
+}
+
+.submit {
+  padding: 10px 15px;
+  background-color: #013cc6;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  border-radius: 5px;
+  margin-top: 25px;
 }
