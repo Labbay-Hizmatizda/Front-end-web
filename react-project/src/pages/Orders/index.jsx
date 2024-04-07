@@ -11,6 +11,7 @@ export const Orders = () => {
     "location_link",
     "price",
     "is active",
+    "created date",
     "owner id",
     "category",
   ];
@@ -22,7 +23,13 @@ export const Orders = () => {
 
   return (
     <>
-      <Table data={data} table_headers={table_headers} title={"Orders"} />
+      <Table
+        data={data}
+        table_headers={table_headers}
+        title={"Orders"}
+        page={"orders"}
+        setData={setData}
+      />
     </>
   );
 };

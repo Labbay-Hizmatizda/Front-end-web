@@ -7,6 +7,7 @@ export const EmployeeReviews = () => {
     "id",
     "rate",
     "message",
+    "created date",
     "job id",
     "owner id",
     "employer id",
@@ -22,6 +23,8 @@ export const EmployeeReviews = () => {
       data={data}
       table_headers={table_headers}
       title={"Employee Reviews"}
+      page={"employee_reviews"}
+      setData={setData}
     />
   );
 };

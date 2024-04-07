@@ -4,7 +4,13 @@ import { useState } from "react";
 import { Table } from "../../components/Table";
 
 export const PaymentAppeals = () => {
-  const table_headers = ["id", "message", "owner id", "payment id"];
+  const table_headers = [
+    "id",
+    "message",
+    "created date",
+    "owner id",
+    "payment id",
+  ];
   const [data, setData] = useState([]);
   const api = new AppService();
 
@@ -19,6 +25,8 @@ export const PaymentAppeals = () => {
       data={data}
       table_headers={table_headers}
       title={"Payment Appeals"}
+      page={"payment_appeals"}
+      setData={setData}
     />
   );
 };

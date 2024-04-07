@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "./FiltersModal.module.scss";
 
-export const FilterInput = ({ item, setFilters, filters }) => {
+export const FilterInput = ({ item, setFilters }) => {
   const [value, setValue] = useState("");
 
-  useEffect(() => {
-    // Доделать фильтры
-    setFilters();
-  }, [value]);
+  const handleChange = (e) => {
+    const newValue = e.target.value;
+    setValue(newValue);
+    setFilters((prevFilters) => ({
+      ...prevFilters,
+      [item]: newValue,
+    }));
+  };
 
   return (
     <input
@@ -15,7 +19,7 @@ export const FilterInput = ({ item, setFilters, filters }) => {
       placeholder={item}
       className={styles.input}
       value={value}
-      onChange={(e) => setValue(e.target.value)}
+      onChange={handleChange}
     />
   );
 };

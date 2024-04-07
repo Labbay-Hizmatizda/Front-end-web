@@ -1,9 +1,16 @@
 import React, { useState } from "react";
 import styles from "./FiltersModal.module.scss";
 import { FilterInput } from "./FilterInput";
+import AppService from "../../services";
 
-export const FiltersModal = ({ keys, setFiltersModalVisible }) => {
+export const FiltersModal = ({
+  keys,
+  setFiltersModalVisible,
+  page,
+  setData,
+}) => {
   const filtersList = [
+    "id",
     "user_id",
     "name",
     "surname",
@@ -20,8 +27,26 @@ export const FiltersModal = ({ keys, setFiltersModalVisible }) => {
     "rate",
   ];
 
+  const api = new AppService();
+
   const [filters, setFilters] = useState({});
-  console.log(filters);
+
+  const handleSetFilters = (newFilters) => {
+    setFilters(newFilters);
+  };
+
+  const getFilteredData = () => {
+    let filterUrl = "";
+    for (let key in filters) {
+      filterUrl += `${key}=${filters[key]}&`;
+    }
+    filterUrl = filterUrl.slice(0, filterUrl.length - 1);
+    console.log(filterUrl);
+    api
+      .getResource(`/${page}/?${filterUrl}`)
+      .then((filteredData) => setData(filteredData))
+      .then(() => setFiltersModalVisible(false));
+  };
 
   return (
     <div
@@ -37,13 +62,13 @@ export const FiltersModal = ({ keys, setFiltersModalVisible }) => {
                 <FilterInput
                   item={key}
                   key={key}
-                  setFilters={setFilters}
+                  setFilters={handleSetFilters}
                   filters={filters}
                 />
               )
           )}
         </div>
-        <button className={styles.submit} onClick={() => console.log(filters)}>
+        <button className={styles.submit} onClick={getFilteredData}>
           search
         </button>
       </div>

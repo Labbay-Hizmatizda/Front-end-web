@@ -3,7 +3,14 @@ import AppService from "../../services";
 import { Table } from "../../components/Table";
 
 export const Proposals = () => {
-  const table_headers = ["id", "price", "owner id", "order id"];
+  const table_headers = [
+    "id",
+    "price",
+    "is active",
+    "created date",
+    "owner id",
+    "order id",
+  ];
   const [data, setData] = useState([]);
   const api = new AppService();
 
@@ -14,6 +21,12 @@ export const Proposals = () => {
   }, []);
 
   return (
-    <Table data={data} table_headers={table_headers} title={"Proposals"} />
+    <Table
+      data={data}
+      table_headers={table_headers}
+      title={"Proposals"}
+      page={"proposals"}
+      setData={setData}
+    />
   );
 };

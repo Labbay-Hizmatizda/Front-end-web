@@ -8,6 +8,7 @@ export const Payments = () => {
     "id",
     "employee approve",
     "employer approve",
+    "created date",
     "job id",
   ];
   const [data, setData] = useState([]);
@@ -19,5 +20,13 @@ export const Payments = () => {
     });
   }, []);
 
-  return <Table data={data} table_headers={table_headers} title={"Payments"} />;
+  return (
+    <Table
+      data={data}
+      table_headers={table_headers}
+      title={"Payments"}
+      page={"payments"}
+      setData={setData}
+    />
+  );
 };

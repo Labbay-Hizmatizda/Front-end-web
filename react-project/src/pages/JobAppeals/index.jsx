@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Table } from "../../components/Table";
 
 export const JobAppeals = () => {
-  const table_headers = ["id", "message", "owner id", "job id"];
+  const table_headers = ["id", "message", "created date", "owner id", "job id"];
   const [data, setData] = useState([]);
   const api = new AppService();
 
@@ -15,6 +15,12 @@ export const JobAppeals = () => {
   }, []);
 
   return (
-    <Table data={data} table_headers={table_headers} title={"Job Appeals"} />
+    <Table
+      data={data}
+      table_headers={table_headers}
+      title={"Job Appeals"}
+      page={"job_appeals"}
+      setData={setData}
+    />
   );
 };

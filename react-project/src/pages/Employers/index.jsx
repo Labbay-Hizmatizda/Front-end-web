@@ -10,6 +10,7 @@ export const Employers = () => {
     "surname",
     "phone number",
     "created date",
+    "language",
   ];
   const [data, setData] = useState([]);
   const api = new AppService();
@@ -21,6 +22,12 @@ export const Employers = () => {
   }, []);
 
   return (
-    <Table data={data} table_headers={table_headers} title={"Employers"} />
+    <Table
+      data={data}
+      table_headers={table_headers}
+      title={"Employers"}
+      page={"employers"}
+      setData={setData}
+    />
   );
 };
