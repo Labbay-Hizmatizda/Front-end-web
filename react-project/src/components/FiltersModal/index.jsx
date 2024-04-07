@@ -30,6 +30,7 @@ export const FiltersModal = ({
   const api = new AppService();
 
   const [filters, setFilters] = useState({});
+  const [error, setError] = useState("");
 
   const handleSetFilters = (newFilters) => {
     setFilters(newFilters);
@@ -41,11 +42,11 @@ export const FiltersModal = ({
       filterUrl += `${key}=${filters[key]}&`;
     }
     filterUrl = filterUrl.slice(0, filterUrl.length - 1);
-    console.log(filterUrl);
     api
       .getResource(`/${page}/?${filterUrl}`)
       .then((filteredData) => setData(filteredData))
-      .then(() => setFiltersModalVisible(false));
+      .then(() => setFiltersModalVisible(false))
+      .catch((err) => setError(err.message));
   };
 
   return (
@@ -68,6 +69,7 @@ export const FiltersModal = ({
               )
           )}
         </div>
+        {error && <p className={styles.error}>{error}</p>}
         <button className={styles.submit} onClick={getFilteredData}>
           search
         </button>
