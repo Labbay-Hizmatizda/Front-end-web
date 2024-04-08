@@ -14,6 +14,7 @@ import { EmployeeCards } from "./pages/EmployeeCards";
 import { Payments } from "./pages/Payments";
 import { PaymentAppeals } from "./pages/PaymentAppeals";
 import { Proposals } from "./pages/Proposals";
+import { PageNotFound } from "./pages/PageNotFound";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
           <Route path="payments" element={<Payments />} />
           <Route path="payment-appeals" element={<PaymentAppeals />} />
           <Route path="proposals" element={<Proposals />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </div>
     </div>
