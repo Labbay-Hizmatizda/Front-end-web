@@ -11,6 +11,7 @@ export const Employees = () => {
     "surname",
     "phone number",
     "created date",
+    "language",
   ];
   const [data, setData] = useState([]);
   const api = new AppService();

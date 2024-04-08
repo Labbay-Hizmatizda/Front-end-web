@@ -25,6 +25,7 @@ export const FiltersModal = ({
     "job_id",
     "employer_id",
     "rate",
+    "language",
   ];
 
   const api = new AppService();
