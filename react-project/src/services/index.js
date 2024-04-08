@@ -31,56 +31,8 @@ export default class AppService {
   //       throw new Error(`Something went wrong ${url}. Please try again`);
   //   }
 
-  getEmployees() {
-    return this.getResource("/employees");
-  }
-
-  getEmployers() {
-    return this.getResource("/employers");
-  }
-
-  getEmployerReviews() {
-    return this.getResource("/employer_reviews/");
-  }
-
-  getOrders() {
-    return this.getResource("/orders");
-  }
-
-  getProposals() {
-    return this.getResource("/proposals");
-  }
-
-  getEmployeeCards() {
-    return this.getResource("/employee_cards");
-  }
-
-  getEmployeeReviews() {
-    return this.getResource("/employee_reviews");
-  }
-
-  getJobs() {
-    return this.getResource("/jobs");
-  }
-
-  getJobAppeals() {
-    return this.getResource("/job_appeals");
-  }
-
-  getPayments() {
-    return this.getResource("/payments");
-  }
-
-  getPaymentAppeals() {
-    return this.getResource("/payment_appeals");
-  }
-
-  getEmployeePassports() {
-    return this.getResource("/employee_passports");
-  }
-
-  getCVs() {
-    return this.getResource("/cvs");
+  getData(page) {
+    return this.getResource(page);
   }
 
   getFilteredData(page, key, filter) {

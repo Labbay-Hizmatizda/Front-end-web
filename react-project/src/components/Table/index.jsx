@@ -4,31 +4,50 @@ import { TableRow } from "../TableRow";
 import styles from "./Table.module.scss";
 import { EmptyData } from "../EmptyData";
 import { FiltersModal } from "../FiltersModal";
+import AppService from "../../services";
 
-export const Table = ({ title, table_headers, data, page, setData }) => {
+export const Table = ({ title, table_headers, page }) => {
   const [keys, setKeys] = useState([]);
+  const [isDataFiltered, setIsDataFiltered] = useState(false);
   const [filtersModalVisible, setFiltersModalVisible] = useState(false);
+  const [data, setData] = useState([]);
+  const api = new AppService();
+
+  useEffect(() => {
+    api.getData(`/${page}`).then((r) => setData(r));
+  }, []);
+
   useEffect(() => {
     if (data.length) {
       setKeys(Object.keys(data[0]));
     }
   }, [data]);
 
+  const filtersBtn = () => {
+    if (isDataFiltered) {
+      api
+        .getData(`/${page}`)
+        .then((r) => setData(r))
+        .then(() => setIsDataFiltered(false));
+    } else {
+      setFiltersModalVisible(true);
+    }
+  };
+
   return (
     <section className={styles.section}>
       <div className={styles.wrapper}>
         <div className={styles.flexWrapper}>
           <h1 className={styles.title}>{title}</h1>
-          {
-            <button
-              className={styles.openFilters}
-              onClick={() => setFiltersModalVisible(true)}
-            >
-              filters
+          {!data.length && !isDataFiltered ? (
+            ""
+          ) : (
+            <button className={styles.openFilters} onClick={filtersBtn}>
+              {isDataFiltered ? "clear" : "filters"}
             </button>
-          }
+          )}
         </div>
-        {(data.length > 0 && (
+        {(data.length && (
           <>
             <div className={styles.headers}>
               <TableHeaders list={table_headers} />
@@ -47,6 +66,7 @@ export const Table = ({ title, table_headers, data, page, setData }) => {
           keys={keys}
           page={page}
           setData={setData}
+          setIsDataFiltered={setIsDataFiltered}
         />
       )}
     </section>

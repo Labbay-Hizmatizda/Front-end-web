@@ -8,6 +8,7 @@ export const FiltersModal = ({
   setFiltersModalVisible,
   page,
   setData,
+  setIsDataFiltered,
 }) => {
   const filtersList = [
     "id",
@@ -46,6 +47,7 @@ export const FiltersModal = ({
     api
       .getResource(`/${page}/?${filterUrl}`)
       .then((filteredData) => setData(filteredData))
+      .then(() => setIsDataFiltered(true))
       .then(() => setFiltersModalVisible(false))
       .catch((err) => setError(err.message));
   };
