@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./FiltersModal.module.scss";
 import { FilterInput } from "./FilterInput";
 import AppService from "../../services";
+import { FiltersAccordion } from "./FiltersAccordion";
 
 export const FiltersModal = ({
   keys,
@@ -33,6 +34,7 @@ export const FiltersModal = ({
 
   const [filters, setFilters] = useState({});
   const [error, setError] = useState("");
+  const [categories, setCategories] = useState([]);
 
   const handleSetFilters = (newFilters) => {
     setFilters(newFilters);
@@ -52,6 +54,12 @@ export const FiltersModal = ({
       .catch((err) => setError(err.message));
   };
 
+  useEffect(() => {
+    if (page == "orders") {
+      api.getResource("/category").then((data) => setCategories(data));
+    }
+  }, [page]);
+
   return (
     <div
       className={styles.wrapper}
@@ -60,8 +68,14 @@ export const FiltersModal = ({
       <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
         <h2 className={styles.title}>Filters</h2>
         <div className={styles.inputs}>
-          {keys.map(
-            (key) =>
+          {keys.map((key) =>
+            filtersList.includes(key) && key === "category" ? (
+              <FiltersAccordion
+                list={categories}
+                setFilters={setFilters}
+                key={key}
+              />
+            ) : (
               filtersList.includes(key) && (
                 <FilterInput
                   item={key}
@@ -70,6 +84,7 @@ export const FiltersModal = ({
                   filters={filters}
                 />
               )
+            )
           )}
         </div>
         {error && <p className={styles.error}>{error}</p>}

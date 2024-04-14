@@ -3,6 +3,7 @@ import { Table } from "../../components/Table";
 export const Orders = () => {
   const table_headers = [
     "id",
+    "category",
     "description",
     "media",
     "location",
@@ -11,7 +12,6 @@ export const Orders = () => {
     "is active",
     "created date",
     "owner id",
-    "category",
   ];
 
   return (
