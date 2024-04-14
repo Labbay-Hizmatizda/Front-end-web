@@ -13,7 +13,7 @@ export const FiltersAccordion = ({ list, setFilters }) => {
       ["category"]: item.name,
     }));
   };
-  console.log(list);
+
   return (
     <>
       <div

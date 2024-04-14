@@ -60,7 +60,35 @@ export const MainSidebar = () => {
     ],
   ];
 
-  const [listLang, setListLang] = useState(listEng);
+  const listUzb = [
+    [
+      { id: 3, title: "Mijozlar", link: "employers" },
+      { id: 5, title: "Buyurtmachini sharhi", link: "employer-reviews" },
+    ],
+    [
+      { id: 2, title: "Bajaruvchi", link: "employees" },
+      { id: 9, title: "Bank kartalar", link: "employee-cards" },
+      { id: 4, title: "Sharhlar", link: "employee-reviews" },
+      { id: 14, title: "Passportlar", link: "employee-passports" },
+      { id: 10, title: "CVs", link: "cvs" },
+    ],
+    [
+      { id: 6, title: "Arizalar", link: "proposals" },
+      { id: 8, title: "Buyurtmalar", link: "orders" },
+    ],
+
+    [
+      { id: 7, title: "Ishlar", link: "jobs" },
+      { id: 12, title: "Shikoyatlar", link: "job-appeals" },
+    ],
+
+    [
+      { id: 11, title: "To'lovlar", link: "payments" },
+      { id: 13, title: "Shikoyatlar", link: "payment-appeals" },
+    ],
+  ];
+
+  const [listLang, setListLang] = useState(listRus);
 
   const dispatch = useDispatch();
 
@@ -79,7 +107,9 @@ export const MainSidebar = () => {
         <button className={styles.langBtn} onClick={() => setListLang(listEng)}>
           Eng
         </button>
-        <button className={styles.langBtn}>Uzb</button>
+        <button className={styles.langBtn} onClick={() => setListLang(listUzb)}>
+          Uzb
+        </button>
       </div>
     </aside>
   );
