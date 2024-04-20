@@ -5,11 +5,14 @@ import styles from "./Table.module.scss";
 import { EmptyData } from "../EmptyData";
 import { FiltersModal } from "../FiltersModal";
 import AppService from "../../services";
+import { useSelector } from "react-redux";
 
 export const Table = ({ title, table_headers, page }) => {
   const [keys, setKeys] = useState([]);
   const [isDataFiltered, setIsDataFiltered] = useState(false);
   const [filtersModalVisible, setFiltersModalVisible] = useState(false);
+  const language = useSelector((state) => state.language.lang);
+  const [tableHeaders, setTableHeaders] = useState(table_headers[language]);
   const [data, setData] = useState([]);
   const api = new AppService();
 
@@ -22,6 +25,10 @@ export const Table = ({ title, table_headers, page }) => {
       setKeys(Object.keys(data[0]));
     }
   }, [data]);
+
+  useEffect(() => {
+    setTableHeaders(table_headers[language]);
+  }, [language]);
 
   const filtersBtn = () => {
     if (isDataFiltered) {
@@ -50,7 +57,7 @@ export const Table = ({ title, table_headers, page }) => {
         {(data.length && (
           <>
             <div className={styles.headers}>
-              <TableHeaders list={table_headers} />
+              <TableHeaders list={tableHeaders} />
             </div>
             {data.map((row) => (
               <div className={styles.row} key={row.id}>

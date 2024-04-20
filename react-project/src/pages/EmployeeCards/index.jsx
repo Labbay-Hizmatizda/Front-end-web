@@ -1,13 +1,23 @@
 import { Table } from "../../components/Table";
 
 export const EmployeeCards = () => {
-  const table_headers = [
-    "id",
-    "holder name",
-    "card number",
-    "created date",
-    "owner id",
-  ];
+  const table_headers = {
+    eng: ["id", "holder name", "card number", "created date", "owner id"],
+    ru: [
+      "идентификатор",
+      "имя владельца",
+      "номер карты",
+      "дата создания",
+      "идентификатор владельца",
+    ],
+    uzb: [
+      "identifikator",
+      "egasi nomi",
+      "karta raqami",
+      "yaratilgan sana",
+      "egasi identifikatori",
+    ],
+  };
 
   return (
     <>

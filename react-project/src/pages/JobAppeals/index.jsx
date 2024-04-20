@@ -1,7 +1,23 @@
 import { Table } from "../../components/Table";
 
 export const JobAppeals = () => {
-  const table_headers = ["id", "message", "created date", "owner id", "job id"];
+  const table_headers = {
+    eng: ["id", "message", "created date", "owner id", "job id"],
+    ru: [
+      "идентификатор",
+      "сообщение",
+      "дата создания",
+      "идентификатор владельца",
+      "идентификатор задания",
+    ],
+    uzb: [
+      "identifikator",
+      "xabar",
+      "yaratilgan sana",
+      "egasi identifikatori",
+      "vazifa identifikatori",
+    ],
+  };
 
   return (
     <Table
